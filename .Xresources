@@ -1,32 +1,92 @@
-URxvt*loginShell:  true
-URxvt*scrollBar: false
-! scrollbar style - rxvt (default), plain (most compact), next, or xterm
-URxvt*scrollstyle: rxvt
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
 
-URxvt*transparent: true
-! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*shading: 20
+URxvt.depth:            32
+URxvt.geometry:         90x30
+URxvt.transparent:      true
+URxvt.shading:		12
+URxvt.fading:           40
+URxvt.urgentOnBell:   true
+URxvt.visualBell:     true
+URxvt.loginShell:       true
+URxvt.saveLines:        50
+URxvt.internalBorder:   0
+URxvt.lineSpace:        0
 
-URxvt*font: xft:monaco:size=10
-URxvt*fading:  20
+! Fonts
+URxvt.allow_bold:           false
+URxvt*font: xft:Monospace:pixelsize=14
+URxvt*boldFont: xft:Monospace:pixelsize=14
 
-URxvt*foreground: #C0C0C0
-URrxvt*background: #666666
-URxvt*colorUL:  yellow
+! Fix font space
+URxvt*letterSpace: -1
 
-*color0:  #2E3436
-*color1:  #a40000
-*color2:  #4E9A06
-*color3:  #C4A000
-*color4:  #3465A4
-*color5:  #75507B
-*color6:  #ce5c00
-*color7:  #babdb9
-*color8:  #555753
-*color9:  #EF2929
-*color10: #8AE234
-*color11: #FCE94F
-*color12: #729FCF
-*color13: #AD7FA8
-*color14: #fcaf3e
-*color15: #EEEEEC
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+
+! Base16 Tomorrow Dark
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #1d1f21
+#define base01 #282a2e
+#define base02 #373b41
+#define base03 #969896
+#define base04 #b4b7b4
+#define base05 #c5c8c6
+#define base06 #e0e0e0
+#define base07 #ffffff
+#define base08 #cc6666
+#define base09 #de935f
+#define base0A #f0c674
+#define base0B #b5bd68
+#define base0C #8abeb7
+#define base0D #81a2be
+#define base0E #b294bb
+#define base0F #a3685a
+
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
+
+! Rofi
+rofi.width: 100
+rofi.padding: 400
+rofi.opacity: 90
+rofi.bw: 0
+rofi.separator-style: none
