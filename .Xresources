@@ -44,6 +44,8 @@ URxvt.pointerBlank:         true
 
 ! Base16 Tomorrow Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)
+! Modified:
+! 	base0B from #5bbd68 to #87d7af
 
 #define base00 #1d1f21
 #define base01 #282a2e
@@ -56,7 +58,7 @@ URxvt.pointerBlank:         true
 #define base08 #cc6666
 #define base09 #de935f
 #define base0A #f0c674
-#define base0B #b5bd68
+#define base0B #87d7af
 #define base0C #8abeb7
 #define base0D #81a2be
 #define base0E #b294bb
