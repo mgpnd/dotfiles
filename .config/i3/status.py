@@ -1,43 +1,69 @@
 from i3pystatus import Status
 from i3pystatus.updates import pacman
 
+class Colors(object):
+    COMMENT = "#969896"
+    GREEN = "#87d7af"
+    RED = "#cc6666"
+    TEXT = "#c5c8c6"
+    YELLOW = "#d7d7af"
+
 status = Status(standalone=True)
 
 status.register("clock",
-    format="%a %-d %b %X",)
+    format="%X",)
+
+status.register("clock",
+    format="%a %-d %b",
+    color = Colors.COMMENT,)
 
 status.register("pulseaudio",
-    format="♪{volume}",)
-
-status.register("weather",
-    format="SPB: {current_temp}",
-    location_code="RSXX0091:1:RS",
-    colorize=True,
-    interval=600)
+    format=" {volume}",
+    color_unmuted=Colors.TEXT,
+    format_muted=" {volume}",
+    color_muted=Colors.RED,)
 
 status.register("updates",
+    color = Colors.GREEN,
+    color_no_updates = Colors.COMMENT,
     format = "Updates: {count}",
     format_no_updates = "No updates",
     backends = [pacman.Pacman()])
 
 status.register("disk",
     path="/home",
-    format="home: {used}/{total}G [{avail}G]",)
+    hints={"markup": "pango"},
+    format="home <span color=\"{0}\">{{used}}G [{{total}}G]</span>".format(Colors.TEXT),
+    color=Colors.COMMENT,
+    critical_limit=10,
+    critical_color=Colors.RED,)
 
 status.register("disk",
     path="/",
-    format="root: {used}/{total}G [{avail}G]",)
+    hints={"markup": "pango"},
+    format="root <span color=\"{0}\">{{used}}G [{{total}}G]</span>".format(Colors.TEXT),
+    color=Colors.COMMENT,
+    critical_limit=10,
+    critical_color=Colors.RED,)
 
 status.register("temp",
-    format="CPU temp: {temp:.0f} °C",
+    hints={"markup": "pango"},
+    format="CPU temp <span color=\"{0}\">{{temp:.0f}}°C</span>".format(Colors.TEXT),
     file="/sys/class/thermal/thermal_zone2/temp",
-    alert_temp=60,)
+    color=Colors.COMMENT,
+    alert_temp=50,
+    alert_color=Colors.RED,)
 
 status.register("mem",
-    format="MEM: {percent_used_mem:02}%",
-    color="#FFFFFF")
+    hints={"markup": "pango"},
+    format="MEM <span color=\"{0}\">{{percent_used_mem:02}}%</span>".format(Colors.TEXT),
+    color=Colors.COMMENT,
+    warn_color=Colors.YELLOW,
+    alert_color=Colors.RED)
 
 status.register("cpu_usage",
-    format="CPU: {usage:02}%")
+    hints={"markup": "pango"},
+    format="CPU <span color=\"{0}\">{{usage:02}}%</span>".format(Colors.TEXT),
+    color=Colors.COMMENT,)
 
 status.run()
