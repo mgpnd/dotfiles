@@ -43,13 +43,13 @@ font pango:Ubuntu Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -run-list-command ". ~/bin/zsh_aliases.sh" -run-command "/usr/bin/zsh -i -c '{cmd}'" -rnow
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -168,12 +168,12 @@ bindsym $mod+Control+Down exec amixer set Master 2%- -q
 
 # app key bindings
 bindsym $mod+c exec chromium
-bindsym Mod1+Control+h exec hipchat
-bindsym Mod1+Control+v exec vmware-view
+bindsym $mod+Control+h exec hipchat
+bindsym $mod+Control+v exec vmware-view
 
 # other key bindings
-bindsym Mod1+Control+Right workspace next
-bindsym Mod1+Control+Left workspace prev
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Left workspace prev
 
 # windows border
 new_window pixel 1
@@ -181,7 +181,7 @@ for_window [class="^chromium$"] border none
 
 # assing specific windows to own workspaces
 assign [class="^chromium$"] $workspace1
-assign [class="^Atom$"] $workspace3
+assign [class="^Code - OSS$"] $workspace3
 assign [class="^Skype$"] $workspace8
 assign [class="^telegram-desktop$"] $workspace9
 assign [class="^HipChat$"] $workspace9
@@ -193,34 +193,33 @@ assign [class="^Vmware-view$"] $workspace10
 bar {
   status_command    python ~/.config/i3/status.py
   position          top
-  tray_output       primary
-  font		    pango:Ubuntu Mono 12
+  font		          pango:Ubuntu Mono 12
   workspace_buttons yes
 
   colors {
     separator	$comment
-    background	$background
-    statusline	$text
-#			border		background	text
-    focused_workspace	$background	$background	$text
-    active_workspace	$background	$background	$comment
-    inactive_workspace	$background	$background	$comment
-    urgent_workspace	$background	$background	$red
+      background	$background
+      statusline	$text
+#			border        		  background	text        indicator
+      focused_workspace	  $background	$background	$text
+      active_workspace	  $background	$background	$comment
+      inactive_workspace	$background	$background	$comment
+      urgent_workspace	  $background	$background	$red
   }
 }
 
-# theme			border		background	text		indicator
-client.focused 		$background	$background	$text		$comment
+# theme			            border		  background	text		  indicator
+client.focused 		      $background	$background	$text		  $comment
 client.focused_inactive $background	$background	$comment	$background
-client.unfocused 	$background	$background	$comment	$background
-client.urgent 		$background	$red		$red		$background
+client.unfocused 	      $background	$background	$comment	$background
+client.urgent 		      $background	$red		    $red		  $background
 
 # startup
 exec chromium
 exec telegram-desktop
 exec hipchat
-exec skype
-exec_always compton -f
+# exec skype
+exec_always compton --inactive-dim 0.2
 exec_always feh --bg-center ~/pictures/mountain.jpg
 
 # vim:filetype=i3
