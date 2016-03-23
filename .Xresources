@@ -19,11 +19,11 @@ URxvt.lineSpace:        0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font: xft:Monospace:pixelsize=14
-URxvt*boldFont: xft:Monospace:pixelsize=14
+URxvt*font: xft:Monaco:size=10,xft:FontAwesome:size=10
+URxvt*boldFont: xft:Monaco:size=10
 
 ! Fix font space
-URxvt*letterSpace: -1
+URxvt*letterSpace: -1 
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
