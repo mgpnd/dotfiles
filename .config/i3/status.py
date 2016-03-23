@@ -46,6 +46,13 @@ status.register("disk",
     critical_limit=10,
     critical_color=Colors.RED,)
 
+status.register("mem",
+    hints={"markup": "pango"},
+    format="MEM <span color=\"{0}\">{{used_mem}}M</span>".format(Colors.TEXT),
+    color=Colors.COMMENT,
+    warn_color=Colors.YELLOW,
+    alert_color=Colors.RED)
+
 status.register("temp",
     hints={"markup": "pango"},
     format="CPU temp <span color=\"{0}\">{{temp:.0f}}°C</span>".format(Colors.TEXT),
@@ -53,13 +60,6 @@ status.register("temp",
     color=Colors.COMMENT,
     alert_temp=50,
     alert_color=Colors.RED,)
-
-status.register("mem",
-    hints={"markup": "pango"},
-    format="MEM <span color=\"{0}\">{{percent_used_mem:02}}%</span>".format(Colors.TEXT),
-    color=Colors.COMMENT,
-    warn_color=Colors.YELLOW,
-    alert_color=Colors.RED)
 
 status.register("cpu_usage",
     hints={"markup": "pango"},
