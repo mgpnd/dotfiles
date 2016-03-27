@@ -25,35 +25,6 @@ nnoremap <C-w>l <C-w>k
 nnoremap <C-w>k <C-w>j
 nnoremap <C-w>j <C-w>h
 
-" Airline
-" let g:airline_theme="tomorrow"
-" let g:airline_powerline_fonts=1
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
 " NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
 
@@ -103,9 +74,6 @@ augroup END
 noremap <F3> :Autoformat<CR>
 let g:formatdef_my_custom_cs = '"astyle --mode=cs --style=allman -pcOHNs4"'
 let g:formatters_cs = ['my_custom_cs']
-
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
 
 " Lightline
 let g:lightline = {
@@ -197,15 +165,6 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
   return lightline#statusline(0)
 endfunction
 
-" augroup AutoSyntastic
-"   autocmd!
-"   autocmd BufWritePost *.cs call s:syntastic()
-" augroup END
-" function! s:syntastic()
-"   SyntasticCheck
-"   call lightline#update()
-" endfunction
-" 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
