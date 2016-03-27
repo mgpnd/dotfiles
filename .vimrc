@@ -165,6 +165,21 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
   return lightline#statusline(0)
 endfunction
 
+let g:ctrlp_status_func = {
+  \ 'main': 'Function_Name_1',
+  \ 'prog': 'Function_Name_2',
+  \ }
+function! Function_Name_1(focus, byfname, regex, prev, item, next, marked)
+  let g:lightline.ctrlp_prev = a:prev
+  let g:lightline.ctrlp_item = a:item
+  let g:lightline.ctrlp_next = a:next
+  let g:lightline.ctrlp_marked = a:marked
+  return lightline#statusline(0)
+endfunction
+function! Function_Name_2(str)
+  return lightline#statusline(0)
+endfunction
+
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
