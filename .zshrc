@@ -65,9 +65,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -82,9 +82,9 @@ export TERM=xterm-256color
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias zrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias i3config="vim ~/.config/i3/config"
+alias zrc="nvim ~/.zshrc"
+alias vimrc="nvim ~/.vimrc"
+alias i3config="nvim ~/.config/i3/config"
 alias cc="clear"
 alias fuck="eval $(thefuck --alias)"
 alias vscode="visual-studio-code-oss"
