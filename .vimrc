@@ -2,7 +2,6 @@ let g:pathogen_disabled = []
 execute pathogen#infect()
 
 set ignorecase
-set t_Co=256
 set number
 set laststatus=2
 set showcmd
@@ -12,7 +11,7 @@ set expandtab
 
 syntax on
 filetype plugin indent on
-colorscheme lucid2
+colorscheme luar
 
 " Navigate with jkl; instead of hjkl
 noremap ; l
