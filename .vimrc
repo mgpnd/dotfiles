@@ -24,6 +24,9 @@ nnoremap <C-w>l <C-w>k
 nnoremap <C-w>k <C-w>j
 nnoremap <C-w>j <C-w>h
 
+imap <M-Tab> <Esc>
+vmap <M-Tab> <Esc>
+
 " NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
 
