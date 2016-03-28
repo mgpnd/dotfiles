@@ -217,7 +217,7 @@ client.urgent 		      $background	$red		    $red		  $background
 # startup
 exec chromium
 exec telegram-desktop
-exec hipchat
+exec HipChat4
 # exec skype
 exec_always compton --inactive-dim 0.2
 exec_always feh --bg-center ~/pictures/mountain.jpg
