@@ -219,7 +219,7 @@ exec chromium
 exec telegram-desktop
 exec HipChat4
 # exec skype
-exec_always compton --inactive-dim 0.2
+exec_always compton --inactive-dim 0.2 --backend glx
 exec_always feh --bg-center ~/pictures/mountain.jpg
 
 # vim:filetype=i3
