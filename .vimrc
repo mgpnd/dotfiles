@@ -24,8 +24,14 @@ nnoremap <C-w>l <C-w>k
 nnoremap <C-w>k <C-w>j
 nnoremap <C-w>j <C-w>h
 
-imap <M-Tab> <Esc>
-vmap <M-Tab> <Esc>
+nnoremap <C-w>: <C-w>L
+nnoremap <C-w>L <C-w>K
+nnoremap <C-w>K <C-w>J
+nnoremap <C-w>J <C-w>H
+
+nmap <M-q> <Esc>
+imap <M-q> <Esc>
+vmap <M-q> <Esc>
 
 " NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -47,6 +53,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_full_redraws = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 " OmniSharp
 set noshowmatch
@@ -76,6 +83,7 @@ augroup END
 noremap <F3> :Autoformat<CR>
 let g:formatdef_my_custom_cs = '"astyle --mode=cs --style=allman -pcOHNs4"'
 let g:formatters_cs = ['my_custom_cs']
+let g:formatters_js = ['jscs']
 
 " Lightline
 let g:lightline = {
