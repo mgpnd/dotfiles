@@ -88,7 +88,7 @@ URxvt.pointerBlank:         true
 
 ! Rofi
 rofi.width: 100
-rofi.padding: 400
+rofi.padding: 480
 rofi.opacity: 90
 rofi.bw: 0
 rofi.separator-style: none
@@ -97,3 +97,6 @@ rofi.color-window: #273238, #273238, #1e2529
 rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
 rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
 rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+rofi.font: Ubuntu Mono 18
+rofi.lines: 5
+rofi.line-margin: 12
