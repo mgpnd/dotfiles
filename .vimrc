@@ -1,5 +1,25 @@
-let g:pathogen_disabled = []
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'itchyny/lightline.vim'
+Plug 'gregsexton/MatchTag'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/syntastic'
+Plug 'Chiel92/vim-autoformat'
+Plug 'skammer/vim-css-color'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'andrwb/vim-lapis256'
+
+call plug#end()
+
+colorscheme lapis256
 
 set ignorecase
 set number
@@ -11,7 +31,6 @@ set expandtab
 
 syntax on
 filetype plugin indent on
-colorscheme luar
 
 " Navigate with jkl; instead of hjkl
 noremap ; l
