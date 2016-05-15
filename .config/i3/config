@@ -183,7 +183,7 @@ for_window [class="^chromium$"] border none
 assign [class="^chromium$"] $workspace1
 assign [class="^Code - OSS$"] $workspace3
 assign [class="^Skype$"] $workspace8
-assign [class="^telegram-desktop$"] $workspace9
+assign [class="^Cutegram$"] $workspace9
 assign [class="^HipChat$"] $workspace9
 assign [class="^Vmware-view$"] $workspace10
 
@@ -216,7 +216,7 @@ client.urgent 		      $background	$red		    $red		  $background
 
 # startup
 exec chromium
-exec telegram-desktop
+exec cutegram
 exec HipChat4
 # exec skype
 exec_always compton --inactive-dim 0.2 --backend glx
