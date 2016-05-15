@@ -16,7 +16,7 @@ set $workspace2 "2: "
 set $workspace3 "3: "
 set $workspace4 "4: "
 set $workspace5 "5: "
-set $workspace6 "6: "
+set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
@@ -182,6 +182,7 @@ for_window [class="^chromium$"] border none
 # assing specific windows to own workspaces
 assign [class="^chromium$"] $workspace1
 assign [class="^Code - OSS$"] $workspace3
+assign [class="^Steam$"] $workspace6
 assign [class="^Skype$"] $workspace8
 assign [class="^Cutegram$"] $workspace9
 assign [class="^HipChat$"] $workspace9
