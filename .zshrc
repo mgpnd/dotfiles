@@ -86,8 +86,6 @@ alias zrc="nvim ~/.zshrc"
 alias vimrc="nvim ~/.vimrc"
 alias i3config="nvim ~/.config/i3/config"
 alias cc="clear"
-alias fuck="eval $(thefuck --alias)"
-alias vscode="visual-studio-code-oss"
 
 [ -s "/home/ar/.dnx/dnvm/dnvm.sh" ] && . "/home/ar/.dnx/dnvm/dnvm.sh" # Load dnvm
 [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" # Load rvm
