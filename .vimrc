@@ -15,11 +15,11 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
-Plug 'andrwb/vim-lapis256'
+Plug 'mgpnd/vim-lapmat256'
 
 call plug#end()
 
-colorscheme lapis256
+colorscheme lapmat256
 
 set ignorecase
 set number
