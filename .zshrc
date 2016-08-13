@@ -84,9 +84,14 @@ export TERM=xterm-256color
 # For a full list of active aliases, run `alias`.
 alias zrc="nvim ~/.zshrc"
 alias vimrc="nvim ~/.vimrc"
+alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias i3config="nvim ~/.config/i3/config"
 alias cc="clear"
 
 [ -s "/home/ar/.dnx/dnvm/dnvm.sh" ] && . "/home/ar/.dnx/dnvm/dnvm.sh" # Load dnvm
 [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" # Load rvm
 fpath=(~/.zsh/Completion $fpath) # rvm completions
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
