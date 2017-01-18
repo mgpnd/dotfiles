@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'mgpnd/vim-lapmat256'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
