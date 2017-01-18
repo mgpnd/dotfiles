@@ -82,10 +82,9 @@ export TERM=xterm-256color
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias zrc="nvim ~/.zshrc"
-alias vimrc="nvim ~/.vimrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias i3config="nvim ~/.config/i3/config"
+alias zrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias i3config="vim ~/.config/i3/config"
 alias cc="clear"
 
 [ -s "/home/ar/.dnx/dnvm/dnvm.sh" ] && . "/home/ar/.dnx/dnvm/dnvm.sh" # Load dnvm
