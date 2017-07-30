@@ -1,4 +1,5 @@
 # Common packages
+sudo dnf group install "Development Tools"
 sudo dnf install sudo dnf install util-linux-user
 
 # ZSH
