@@ -29,3 +29,6 @@ ln -s $(echo $HOME)/code/dotfiles/.config/termite $(echo $HOME)/.config/termite
 
 git config --global user.email "stillintop@gmail.com"
 git config --global user.name "Artem Rashev"
+
+# Set close button to the left corner in gnome
+gsettings set org.gnome.desktop.wm.preferences button-layout 'close:'
