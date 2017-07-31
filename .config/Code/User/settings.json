@@ -1,0 +1,66 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 13,
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.autoIndent": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.renderWhitespace": "all",
+
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    "explorer.openEditors.visible": 0,
+
+    "debug.inlineValues": true,
+
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["h"]
+        },
+        {
+            "before": ["k"],
+            "after": ["j"]
+        },
+        {
+            "before": ["l"],
+            "after": ["k"]
+        },
+        {
+            "before": [";"],
+            "after": ["l"]
+        },
+        {
+            "before": ["<C-w>", "j"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<C-w>", "k"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<C-w>", "l"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<C-w>", ";"],
+            "after": ["<C-w>", "l"]
+        }
+    ],
+    "vim.useSystemClipboard": true,
+    "vim.timeout": 500,
+    "vim.hlsearch": true,
+    "vim.disableAnnoyingNeovimMessage": true,
+
+    "dart.debugSdkLibraries": false,
+    "dart.debugExternalLibraries": false,
+    "dart.runPubGetOnPubspecChanges": false
+}
