@@ -1,17 +1,16 @@
 # Common packages
-sudo dnf group install "Development Tools"
-sudo dnf install sudo dnf install util-linux-user
+sudo dnf -y group install "Development Tools"
+sudo dnf -y install util-linux-user
 
 # ZSH
-sudo dnf install zsh
+sudo dnf -y install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm $(echo $HOME)/.zshrc
 ln -s $(echo $HOME)/code/dotfiles/.zshrc $(echo $HOME)/.zshrc
-chsh -s $(which zsh) $(echo $USERNAME)
 source $(echo $HOME)/.zshrc
 
 # VIM
-sudo dnf install vim
+sudo dnf -y install vim-enhanced
 ln -s $(echo $HOME)/code/dotfiles/.vimrc $(echo $HOME)/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -19,6 +18,17 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 curl -sSL https://get.rvm.io | bash -s stable
 rvm install ruby
+
+# Node.js
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# PostgreSQL
+sudo dnf -y install postgresql postgresql-devel postgresql-server postgresql-contrib
+sudo postgresql-setup --initdb --unit postgresql
+sudo systemctl enable postgresql
+sudo systemctl start postgresql
 
 # Other configs
 ln -s $(echo $HOME)/code/dotfiles/.tmux.conf $(echo $HOME)/.tmux.conf
