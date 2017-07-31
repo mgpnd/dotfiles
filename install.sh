@@ -42,6 +42,8 @@ ln -s $(echo $HOME)/code/dotfiles/zsh_aliases.sh $(echo $HOME)/zsh_aliases.sh
 mkdir -p $(echo $HOME)/.config
 ln -s $(echo $HOME)/code/dotfiles/.config/i3 $(echo $HOME)/.config/i3
 ln -s $(echo $HOME)/code/dotfiles/.config/termite $(echo $HOME)/.config/termite
+mkdir -p $(echo $HOME)/.config/Code/User
+ln -s $(echo $HOME)/code/dotfiles/.config/Code/User/settings.json $(echo $HOME)/.config/Code/User/settings.json
 
 git config --global user.email "stillintop@gmail.com"
 git config --global user.name "Artem Rashev"
