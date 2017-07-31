@@ -30,6 +30,11 @@ sudo postgresql-setup --initdb --unit postgresql
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 
+# Redis
+sudo dnf -y install redis
+sudo systemctl enable redis
+sudo systemctl start redis
+
 # Other configs
 ln -s $(echo $HOME)/code/dotfiles/.tmux.conf $(echo $HOME)/.tmux.conf
 ln -s $(echo $HOME)/code/dotfiles/.Xresources $(echo $HOME)/.Xresources
