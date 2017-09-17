@@ -1,5 +1,11 @@
 # Always-used packages
-sudo pacman -S --nocnofirm openssh tmux
+sudo pacman -S --nocnofirm git openssh tmux chromium firefox compton i3 htop lightdm rofi xbindkeys zip
+
+# Fonts
+sudo pacman -S --noconfirm adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts ttf-dejavu ttf-freefont ttf-ubuntu-font-family
+
+# Sound
+sudo pacman -S --noconfirm alsa-utils pulseaudio pulseaudio-jack pamixer
 
 # ZSH
 sudo pacman -S --noconfirm zsh
@@ -35,6 +41,11 @@ sudo systemctl start postgresql
 sudo pacman -S --noconfirm redis
 sudo systemctl enable redis
 sudo systemctl start redis
+
+# Memcached
+sudo pacman -S --noconfirm memcached
+sudo systemctl enable memcached
+sudo systemctl start memcached
 
 # Other configs
 ln -s $(echo $HOME)/code/dotfiles/.tmux.conf $(echo $HOME)/.tmux.conf
