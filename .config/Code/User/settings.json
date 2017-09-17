@@ -4,7 +4,7 @@
     "editor.tabSize": 2,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
     "editor.formatOnPaste": true,
     "editor.autoIndent": true,
     "editor.acceptSuggestionOnEnter": "off",
@@ -59,8 +59,16 @@
     "vim.timeout": 500,
     "vim.hlsearch": true,
     "vim.disableAnnoyingNeovimMessage": true,
+    "vim.handleKeys": {
+        "<C-b>": false
+    },
 
-    "dart.debugSdkLibraries": false,
-    "dart.debugExternalLibraries": false,
-    "dart.runPubGetOnPubspecChanges": false
+    "dart.debugSdkLibraries": true,
+    "dart.debugExternalLibraries": true,
+    "dart.runPubGetOnPubspecChanges": false,
+    "workbench.iconTheme": "vscode-icons",
+
+    "ruby.lint": {
+        "ruby": true
+    }
 }
