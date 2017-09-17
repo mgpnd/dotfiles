@@ -17,6 +17,13 @@ status.register("clock",
     format="%a %-d %b",
     color = Colors.COMMENT,)
 
+status.register("battery",
+    format = " {status} {percentage:.0f}% left {remaining}",
+    color = Colors.TEXT,
+    full_color = Colors.GREEN,
+    charging_color = Colors.YELLOW,
+    critical_color = Colors.RED)
+
 status.register("pulseaudio",
     format=" {volume}",
     color_unmuted=Colors.TEXT,
