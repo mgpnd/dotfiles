@@ -86,7 +86,7 @@ alias zrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias i3config="vim ~/.config/i3/config"
 alias cc="clear"
-alias dartium="~/.dart/dartium/chrome"
+alias dartium="~/.dart/dartium/chrome --user-data-dir=/tmp/temp-profile"
 
 [ -s "/home/ar/.dnx/dnvm/dnvm.sh" ] && . "/home/ar/.dnx/dnvm/dnvm.sh" # Load dnvm
 [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" # Load rvm
@@ -94,10 +94,12 @@ fpath=(~/.zsh/Completion $fpath) # rvm completions
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.dart/sdk/bin" # Add dart executables to PATH
+export PATH="$PATH:$HOME/.dart/dartium" # Dartium executable
 export PATH="$PATH:$HOME/blockchain/bitcoin-core/bin" # Add Bitcoin Core binaries to PATH
 export PATH="$PATH:$HOME/blockchain/litecoin-core/bin" # Add Litecoin Core binaries to PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export SSL_CERT_DIR=/etc/ssl/certs
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

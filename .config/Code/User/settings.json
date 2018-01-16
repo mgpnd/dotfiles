@@ -70,5 +70,35 @@
 
     "ruby.lint": {
         "ruby": true
-    }
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.log": true,
+        "tmp/**": true,
+        "**/assets/packages/**": true,
+        "**/assets/test/packages/**": true,
+        "**/dart/packages/**": true,
+        "**/dart/test/packages/**": true,
+        "**/dart/local_packages/**": true,
+        "**/dart/.pub/**": true,
+        "**/*.min.js*": true,
+        "**/tmp/**": true
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.wordWrap": "on",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": false
+    },
+    "extensions.ignoreRecommendations": false
 }

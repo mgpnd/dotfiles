@@ -2,7 +2,7 @@
 sudo pacman -S --nocnofirm git openssh tmux chromium firefox compton i3 htop lightdm rofi xbindkeys zip
 
 # Fonts
-sudo pacman -S --noconfirm adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts ttf-dejavu ttf-freefont ttf-ubuntu-font-family
+sudo pacman -S --noconfirm adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts ttf-dejavu ttf-freefont ttf-ubuntu-font-family ttf-liberation
 
 # Sound
 sudo pacman -S --noconfirm alsa-utils pulseaudio pulseaudio-jack pamixer

@@ -218,6 +218,6 @@ exec slack
 exec telegram-desktop
 exec thunderbird
 exec_always compton --inactive-dim 0.2 --backend glx
-exec_always feh --bg-center ~/pictures/mountain.jpg
+exec_always feh --bg-scale ~/Pictures/gustafsson.png
 
 # vim:filetype=i3
