@@ -87,6 +87,8 @@ alias vimrc="vim ~/.vimrc"
 alias i3config="vim ~/.config/i3/config"
 alias cc="clear"
 alias dartium="~/.dart/dartium/chrome --user-data-dir=/tmp/temp-profile"
+alias chromium="chromium-browser"
+alias telegram="/opt/telegram/Telegram"
 
 [ -s "/home/ar/.dnx/dnvm/dnvm.sh" ] && . "/home/ar/.dnx/dnvm/dnvm.sh" # Load dnvm
 [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" # Load rvm

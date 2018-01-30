@@ -77,16 +77,7 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/*.log": true,
-        "tmp/**": true,
-        "**/assets/packages/**": true,
-        "**/assets/test/packages/**": true,
-        "**/dart/packages/**": true,
-        "**/dart/test/packages/**": true,
-        "**/dart/local_packages/**": true,
         "**/dart/.pub/**": true,
-        "**/*.min.js*": true,
-        "**/tmp/**": true
     },
     "vsicons.dontShowNewVersionMessage": true,
     "editor.wordWrap": "on",
@@ -97,8 +88,22 @@
         "suppressGitVersionWarning": false,
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": true,
+        "suppressResultsExplorerNotice": false,
         "suppressUpdateNotice": false,
-        "suppressWelcomeNotice": false
+        "suppressWelcomeNotice": true
     },
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.log": true,
+        "tmp/**": true,
+        "**/assets/packages/**": true,
+        "**/assets/test/packages/**": true,
+        "**/dart/packages/**": true,
+        "**/dart/test/packages/**": true,
+        "**/dart/local_packages/**": true,
+        "**/*.min.js*": true,
+        "**/tmp/**": true
+    }
 }
