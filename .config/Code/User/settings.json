@@ -16,12 +16,15 @@
 
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    "files.associations": {
+        "*.yml.sample": "yaml"
+    },
 
-    "explorer.openEditors.visible": 0,
+    "explorer.openEditors.visible": 1,
 
     "debug.inlineValues": true,
 
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["j"],
             "after": ["h"]
@@ -55,21 +58,38 @@
             "after": ["<C-w>", "l"]
         }
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["h"]
+        },
+        {
+            "before": ["k"],
+            "after": ["j"]
+        },
+        {
+            "before": ["l"],
+            "after": ["k"]
+        },
+        {
+            "before": [";"],
+            "after": ["l"]
+        }
+    ],
     "vim.useSystemClipboard": true,
     "vim.timeout": 500,
     "vim.hlsearch": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.handleKeys": {
-        "<C-b>": false
+        "<C-b>": false,
+        "<C-d>": false
     },
-
-    "dart.debugSdkLibraries": true,
-    "dart.debugExternalLibraries": true,
     "dart.runPubGetOnPubspecChanges": false,
     "workbench.iconTheme": "vscode-icons",
 
     "ruby.lint": {
-        "ruby": true
+        "ruby": true,
+        "rubocop": true
     },
     "files.exclude": {
         "**/.git": true,
@@ -88,7 +108,8 @@
         "suppressGitVersionWarning": false,
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": true,
-        "suppressResultsExplorerNotice": false,
+        "suppressResultsExplorerNotice": true,
+        "suppressShowKeyBindingsNotice": true,
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
     },
@@ -105,5 +126,9 @@
         "**/dart/local_packages/**": true,
         "**/*.min.js*": true,
         "**/tmp/**": true
-    }
+    },
+    "gitlens.keymap": "alternate",
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate"
 }
