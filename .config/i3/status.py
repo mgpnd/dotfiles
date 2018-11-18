@@ -30,13 +30,6 @@ status.register("pulseaudio",
     format_muted=" {volume}",
     color_muted=Colors.RED,)
 
-status.register("updates",
-    color = Colors.GREEN,
-    color_no_updates = Colors.COMMENT,
-    format = "Updates: {count}",
-    format_no_updates = "No updates",
-    backends = [pacman.Pacman()])
-
 status.register("disk",
     path="/home",
     hints={"markup": "pango"},
