@@ -87,7 +87,7 @@ alias vimrc="vim ~/.vimrc"
 alias i3config="vim ~/.config/i3/config"
 alias cc="clear"
 alias dartium="DARTIUM_EXPIRATION_TIME=1577836800 ~/.dart/dartium/chrome --user-data-dir=/tmp/temp-profile"
-alias chromium="chromium-browser"
+# alias chromium="chromium-browser"
 alias telegram="/opt/telegram/Telegram"
 
 [ -s "/home/ar/.dnx/dnvm/dnvm.sh" ] && . "/home/ar/.dnx/dnvm/dnvm.sh" # Load dnvm
@@ -104,6 +104,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export SSL_CERT_DIR=/etc/ssl/certs
+export BROWSER=/usr/bin/chromium
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

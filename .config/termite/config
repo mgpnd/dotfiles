@@ -2,6 +2,7 @@
 font = Source Code Pro 11
 allow_bold = false
 letter_space = -1
+browser = /usr/bin/chromium
 
 [colors]
 
@@ -10,6 +11,7 @@ foreground      = #c5c8c6
 foreground_bold = #c5c8c6
 cursor          = #c5c8c6
 background      = rgba(29,31,33,0.92)
+# background      = rgba(34,45,49,0.96)
 
 # black
 color0  = #1d1f21

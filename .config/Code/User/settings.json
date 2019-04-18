@@ -20,6 +20,8 @@
         "*.yml.sample": "yaml"
     },
 
+    "search.usePCRE2": true,
+
     "explorer.openEditors.visible": 1,
 
     "debug.inlineValues": true,
@@ -89,7 +91,7 @@
 
     "ruby.lint": {
         "ruby": true,
-        "rubocop": true
+        "rubocop": false
     },
     "files.exclude": {
         "**/.git": true,
@@ -130,5 +132,10 @@
     "gitlens.keymap": "alternate",
     "ruby.codeCompletion": "rcodetools",
     "ruby.format": "rubocop",
-    "ruby.intellisense": "rubyLocate"
+    "ruby.intellisense": "rubyLocate",
+    "window.menuBarVisibility": "toggle",
+    "dart.checkForSdkUpdates": false,
+    "explorer.confirmDelete": false,
+    "editor.detectIndentation": false,
+    "window.titleBarStyle": "native"
 }
