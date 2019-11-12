@@ -81,17 +81,15 @@
     "vim.useSystemClipboard": true,
     "vim.timeout": 500,
     "vim.hlsearch": true,
-    "vim.disableAnnoyingNeovimMessage": true,
     "vim.handleKeys": {
         "<C-b>": false,
-        "<C-d>": false
+        "<C-d>": false,
+        "<C-g>": false
     },
-    "dart.runPubGetOnPubspecChanges": false,
-    "workbench.iconTheme": "vscode-icons",
 
     "ruby.lint": {
         "ruby": true,
-        "rubocop": false
+        "rubocop": true
     },
     "files.exclude": {
         "**/.git": true,
@@ -101,7 +99,6 @@
         "**/.DS_Store": true,
         "**/dart/.pub/**": true,
     },
-    "vsicons.dontShowNewVersionMessage": true,
     "editor.wordWrap": "on",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -134,8 +131,15 @@
     "ruby.format": "rubocop",
     "ruby.intellisense": "rubyLocate",
     "window.menuBarVisibility": "toggle",
-    "dart.checkForSdkUpdates": false,
     "explorer.confirmDelete": false,
     "editor.detectIndentation": false,
-    "window.titleBarStyle": "native"
+    "window.titleBarStyle": "native",
+
+    "workbench.iconTheme": "vscode-icons",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "window.zoomLevel": 0,
+    "vsicons.dontShowNewVersionMessage": true,
+    "search.followSymlinks": false,
+    "dart.checkForSdkUpdates": false
 }
