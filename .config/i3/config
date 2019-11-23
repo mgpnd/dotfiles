@@ -119,7 +119,7 @@ bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace 4
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -168,7 +168,7 @@ bindsym $mod+c exec chromium
 bindsym $mod+b exec firefox
 
 # screenshot
-bindsym --release Print       exec gnome-screenshot 
+bindsym --release Print       exec gnome-screenshot
 bindsym --release Shift+Print exec gnome-screenshot -a
 bindsym --release Mod1+Print  exec gnome-screenshot -w
 
@@ -177,20 +177,20 @@ bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 
 # Set shut down, restart and locking features
-bindsym $mod+F10 mode "$mode_system" 
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+    s)hutdown 
-mode "$mode_system" { 
-    bindsym l exec --no-startup-id i3exit lock, mode "default" 
-    bindsym s exec --no-startup-id i3exit suspend, mode "default" 
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default" 
-    bindsym e exec --no-startup-id i3exit logout, mode "default" 
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default" 
-    bindsym r exec --no-startup-id i3exit reboot, mode "default" 
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default" 
- 
-    # exit system mode: "Enter" or "Escape" 
-    bindsym Return mode "default" 
-    bindsym Escape mode "default" 
+bindsym $mod+F10 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+    s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # windows border
@@ -210,21 +210,21 @@ assign [class="^Mailspring$"] $workspace10
 # 	i3bar_command i3bar
 # 	status_command i3status
 # 	position top
-# 
+#
 # ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 # #	tray_output primary
 # #	tray_output eDP1
-# 
+#
 # 	bindsym button4 nop
 # 	bindsym button5 nop
 # #   font xft:URWGothic-Book 11
 # 	strip_workspace_numbers yes
-# 
+#
 #     colors {
 #         background #222D31
 #         statusline #F9FAF9
 #         separator  #454947
-# 
+#
 # #                      border  backgr. text
 #         focused_workspace  #F9FAF9 #16a085 #292F34
 #         active_workspace   #595B5B #353836 #FDF6E3
@@ -238,11 +238,11 @@ assign [class="^Mailspring$"] $workspace10
 # # finds out, if available)
 # bar {
 #   status_command    python3 ~/.config/i3/status.py
-# #  status_command    ~/bumblebee-status/bumblebee-status -m getcrypto pacman weather brightness battery amixer datetime 
+# #  status_command    ~/bumblebee-status/bumblebee-status -m getcrypto pacman weather brightness battery amixer datetime
 #   position          top
 #   font		          pango:Monaco 11
 #   workspace_buttons yes
-# 
+#
 #   colors {
 #     separator	$comment
 #       background	$background
@@ -267,8 +267,10 @@ client.urgent 		      $background	$red		    $red		  $background
 exec_always compton --inactive-dim 0.2 --backend glx
 exec_always feh --bg-scale ~/Pictures/wallpapers/zelda.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id xinput set-prop 12 303 0 1
+exec --no-startup-id xinput set-prop 12 295 1
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 exec --no-startup-id volumeicon
