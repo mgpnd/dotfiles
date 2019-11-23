@@ -1,16 +1,19 @@
 # Common packages
-sudo apt-get -y install build-essential
-sudo apt-get -y install util-linux
+sudo apt -y update
+sudo apt -y install build-essential
+sudo apt -y install util-linux
+sudo apt -y install curl gnupg2 i3 telegram-desktop feh compton rofi
 
 # ZSH
-sudo apt-get -y install zsh
+sudo apt -y install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm $(echo $HOME)/.zshrc
 ln -s $(echo $HOME)/code/dotfiles/.zshrc $(echo $HOME)/.zshrc
-source $(rach $HOME)/.zshrc
+source $(echo $HOME)/.zshrc
+sudo chsh -s /usr/bin/zsh
 
 # VIM
-sudo apt-get -y install vim
+sudo apt -y install vim
 ln -s $(echo $HOME)/code/dotfiles/.vimrc $(echo $HOME)/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -25,15 +28,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # PostgreSQL
-postgresql libpq-dev
-sudo postgresql-setup --initdb --unit postgresql
-sudo systemctl enable postgresql
-sudo systemctl start postgresql
+# Don't install because it's going to be installed with docker
+# postgresql libpq-dev
+# sudo postgresql-setup --initdb --unit postgresql
+# sudo systemctl enable postgresql
+# sudo systemctl start postgresql
 
 # Redis
-sudo apt-get -y install redis-server
+sudo apt -y install redis-server
 sudo systemctl enable redis
 sudo systemctl start redis
+
+# Cleanup
+sudo apt -y autoremove
 
 # Other configs
 ln -snf $(echo $HOME)/code/dotfiles/.Xresources $(echo $HOME)/.Xresources
@@ -44,6 +51,11 @@ ln -snf $(echo $HOME)/code/dotfiles/.config/i3 $(echo $HOME)/.config/i3
 ln -snf $(echo $HOME)/code/dotfiles/.config/termite $(echo $HOME)/.config/termite
 mkdir -p $(echo $HOME)/.config/Code/User
 ln -snf $(echo $HOME)/code/dotfiles/.config/Code/User/settings.json $(echo $HOME)/.config/Code/User/settings.json
+ln -snf $(echo $HOME)/code/dotfiles/.config/polybar $(echo $HOME)/.config/polybar
 
-git config --global user.email "stillintop@gmail.com"
+git config --global user.email "artem.rashev@protonmail.com"
 git config --global user.name "Artem Rashev"
+
+# Steps left:
+# 1. Install vte-ng + termite
+# 2. Install polybar
