@@ -2,7 +2,7 @@
 sudo apt -y update
 sudo apt -y install build-essential
 sudo apt -y install util-linux
-sudo apt -y install curl gnupg2 i3 telegram-desktop feh compton rofi
+sudo apt -y install curl gnupg2 i3 telegram-desktop feh compton rofi htop
 
 # ZSH
 sudo apt -y install zsh
