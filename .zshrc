@@ -50,7 +50,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails archlinux)
+plugins=(bundler git rails archlinux)
 
 # User configuration
 
@@ -100,6 +100,9 @@ export PATH="$PATH:$HOME/.dart/sdk/bin" # Add dart executables to PATH
 export PATH="$PATH:$HOME/.dart/dartium" # Dartium executable
 export PATH="$PATH:$HOME/blockchain/bitcoin-core/bin" # Add Bitcoin Core binaries to PATH
 export PATH="$PATH:$HOME/blockchain/litecoin-core/bin" # Add Litecoin Core binaries to PATH
+export PATH="$PATH:/usr/local/go/bin" # Add Go executables to PATH
+export GOPATH="$HOME/.go" # Set default packages path
+export PATH="$GOPATH/bin:$PATH" # Add Go packages to PATH
 export PATH="$PATH:/snap/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
