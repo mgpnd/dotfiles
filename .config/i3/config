@@ -15,9 +15,10 @@ set $workspace9 9
 set $workspace10 10
 
 # Tomorrow
-set $background #1d1f21
-set $text	#c5c8c6
-set $comment	#747674
+set $primary #008ea1
+set $background #1e1e1ec3
+set $text	#f1f1f1
+set $comment	#a4a4a4
 set $red	#cc6666
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -155,13 +156,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-surround-40 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-surround-40 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-surround-40 toggle # mute sound
+
+# Toggling microphone
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 
 # Sreen brightness controls
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # app key bindings
 bindsym $mod+c exec chromium
@@ -175,6 +179,9 @@ bindsym --release Mod1+Print  exec gnome-screenshot -w
 # other key bindings
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
+
+# lock screen
+bindsym $mod+Shift+o exec i3lock -i /home/ar/Pictures/wallpapers/1.png
 
 # Set shut down, restart and locking features
 bindsym $mod+F10 mode "$mode_system"
@@ -198,12 +205,12 @@ new_window pixel 1
 for_window [class="^chromium$"] border none
 
 # assing specific windows to own workspaces
-assign [class="^Firefox$"] $workspace1
+assign [class="^Chromium$"] $workspace1
 assign [class="^Code$"] $workspace3
-assign [class="^chromium$"] $workspace4
 assign [class="^Zulip$"] $workspace8
 assign [class="^TelegramDesktop$"] $workspace9
-assign [class="^Mailspring$"] $workspace10
+assign [class="^ProtonMail Bridge"] $workspace10
+# assign [class="^Mailspring$"] $workspace10
 
 # # Default bar
 # bar {
@@ -261,16 +268,22 @@ smart_borders on
 client.focused 		      $background	$background	$text		  $comment
 client.focused_inactive $background	$background	$comment	$background
 client.unfocused 	      $background	$background	$comment	$background
-client.urgent 		      $background	$red		    $red		  $background
+client.urgent 		      $background	$background	$red		  $background
 
 # startup
 exec_always compton --inactive-dim 0.2 --backend glx
-exec_always feh --bg-scale ~/Pictures/wallpapers/zelda.jpg
+exec_always feh --bg-scale ~/Pictures/wallpapers/2.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id xinput set-prop 12 303 0 1
-exec --no-startup-id xinput set-prop 12 295 1
+
+# Click methos
+exec --no-startup-id xinput set-prop 11 321 0 1 
+# Natural scrolling
+exec --no-startup-id xinput set-prop 11 313 1
+
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+# Autorun
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 exec --no-startup-id volumeicon
@@ -280,7 +293,8 @@ exec --no-startup-id mailcatcher
 exec chromium
 exec zulip
 exec telegram-desktop
-exec mailspring
+# exec mailspring
 exec nm-applet
+exec protonmail-bridge
 
 # vim:filetype=i3
