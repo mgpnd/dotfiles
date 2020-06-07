@@ -17,25 +17,17 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #EA1E1E1E
+background = #CA1E1E1E
 background-alt = #EA1E1E1E
-;background-alt = #383838
-;foreground = ${xrdb:color7:#222}
 foreground = #F1F1F1
-foreground-alt = #555
-;primary = #ffb52a
+foreground-alt = #AAA
 primary = #008EA1
 secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
-;offset-x = 1%
-;offset-y = 1%
-;radius = 6.0
 width = 100%
-height = 42
+height = 46
 fixed-center = true
 dpi = 120
 
@@ -56,14 +48,17 @@ module-margin-right = 2
 
 font-0 = DejaVuSans:size=13;3
 font-1 = NimbusMonoL:style=Bold:size=18;5
-font-8 = FontAwesome:size=12;0
+font-2 = "FontAwesome:size=15;5"
+font-3 = "Font Awesome 5 Free Solid:size=15;5"
+font-4 = "Font Awesome 5 Free Regular:size=15;5"
+font-5 = "Font Awesome 5 Brands Regular:size=15;5"
 
 modules-left = i3
 modules-center = date
-modules-right = cpu temperature pulseaudio xkeyboard xbacklight battery 
+modules-right = cpu temperature xkeyboard pulseaudio xbacklight battery
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+tray-maxsize = 28
 
 ;wm-restack = i3
 
@@ -83,33 +78,33 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+label-layout = %icon%
 
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+layout-icon-0 = ru;RU
+layout-icon-1 = us;EN
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
@@ -119,48 +114,32 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused = %icon%
+label-focused-background = ${colors.background}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
+;label-urgent-underline = ${colors.alert}
 label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = %{T9}%{T-}
 
 bar-width = 10
 bar-indicator = |
@@ -173,17 +152,12 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+;format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
@@ -250,10 +224,11 @@ format = <label>
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+format-muted = <label-muted> 
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -307,32 +282,34 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
+time-format = %H:%M
+
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #34c787
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+label-charging = %percentage%%
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = #ffb52a
+
+label-discharging = %percentage%%   %time%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+;format-full-prefix = " "
+;format-full-prefix-foreground = ${colors.foreground-alt}
+;format-full-underline = ${self.format-charging-underline}
+label-full = "  "
 
 [module/temperature]
 type = internal/temperature
@@ -340,12 +317,12 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+;format-warn-underline = ${self.format-underline}
 
-label = %temperature-c%
-label-warn = %temperature-c%
+label =  %temperature-c%
+label-warn =  %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
