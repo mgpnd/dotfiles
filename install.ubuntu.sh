@@ -2,10 +2,10 @@
 sudo apt -y update
 sudo apt -y install build-essential
 sudo apt -y install util-linux
-sudo apt -y install curl gnupg2 i3 telegram-desktop feh compton rofi htop
+sudo apt -y install curl gnupg2 i3 telegram-desktop feh compton rofi htop tmux
 
 # ZSH
-sudo apt -y install zsh
+sudo apt -y install zsh zsh-syntax-highlighting
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm $(echo $HOME)/.zshrc
 ln -s $(echo $HOME)/code/dotfiles/.zshrc $(echo $HOME)/.zshrc
@@ -20,24 +20,36 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # Ruby
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 curl -sSL https://get.rvm.io | bash -s stable
-rvm install ruby
+rvm install 2.7
 
 # Node.js
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+nvm install stable
+
+# Docker
+sudo apt -y install apt-transport-https ca-certificates gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt -y update
+sudo apt -y install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
 
 # PostgreSQL
+sudo apt install postgresql
 # Don't install because it's going to be installed with docker
-# postgresql libpq-dev
+# sudo apt installlibpq-dev
 # sudo postgresql-setup --initdb --unit postgresql
 # sudo systemctl enable postgresql
 # sudo systemctl start postgresql
 
 # Redis
+# Don't install because it's going to be installed with docker
 sudo apt -y install redis-server
-sudo systemctl enable redis
-sudo systemctl start redis
+sudo systemctl enable redis-server
+sudo systemctl start redis-server
 
 # Cleanup
 sudo apt -y autoremove
