@@ -2,7 +2,7 @@
 sudo apt -y update
 sudo apt -y install build-essential
 sudo apt -y install util-linux
-sudo apt -y install curl gnupg2 i3 telegram-desktop feh compton rofi htop tmux
+sudo apt -y install curl gnupg2 htop tmux
 
 # ZSH
 sudo apt -y install zsh zsh-syntax-highlighting
@@ -10,7 +10,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 rm $(echo $HOME)/.zshrc
 ln -s $(echo $HOME)/code/dotfiles/.zshrc $(echo $HOME)/.zshrc
 source $(echo $HOME)/.zshrc
-sudo chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh ar
 
 # VIM
 sudo apt -y install vim
@@ -37,19 +37,6 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker
 sudo systemctl start docker
 
-# PostgreSQL
-sudo apt install postgresql
-# Don't install because it's going to be installed with docker
-# sudo apt installlibpq-dev
-# sudo postgresql-setup --initdb --unit postgresql
-# sudo systemctl enable postgresql
-# sudo systemctl start postgresql
-
-# Redis
-# Don't install because it's going to be installed with docker
-sudo apt -y install redis-server
-sudo systemctl enable redis-server
-sudo systemctl start redis-server
 
 # Cleanup
 sudo apt -y autoremove
@@ -67,7 +54,3 @@ ln -snf $(echo $HOME)/code/dotfiles/.config/polybar $(echo $HOME)/.config/polyba
 
 git config --global user.email "artem.rashev@protonmail.com"
 git config --global user.name "Artem Rashev"
-
-# Steps left:
-# 1. Install vte-ng + termite
-# 2. Install polybar
