@@ -57,6 +57,7 @@ plugins=(bundler git rails archlinux)
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 export PATH="$PATH:/home/ar/build/dotnet/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$PATH:/$HOME/.local/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,10 +91,12 @@ alias dartium="DARTIUM_EXPIRATION_TIME=1577836800 ~/.dart/dartium/chrome --user-
 # alias chromium="chromium-browser"
 alias telegram="/opt/telegram/Telegram"
 
+alias dc="docker-compose"
+
 [ -s "/home/ar/.dnx/dnvm/dnvm.sh" ] && . "/home/ar/.dnx/dnvm/dnvm.sh" # Load dnvm
 [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" # Load rvm
 fpath=(~/.zsh/Completion $fpath) # rvm completions
-source ~/.cargo/env # Rust
+# source ~/.cargo/env # Rust
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.dart/sdk/bin" # Add dart executables to PATH
@@ -108,7 +111,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export SSL_CERT_DIR=/etc/ssl/certs
-export BROWSER=/snap/bin/chromium
+export BROWSER=/usr/bin/google-chrome
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
