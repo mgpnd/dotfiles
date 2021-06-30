@@ -1,8 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontSize": 13,
-    "editor.tabSize": 2,
-    "editor.minimap.enabled": false,
+  "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.formatOnType": false,
     "editor.formatOnPaste": true,
@@ -137,12 +135,18 @@
     "workbench.iconTheme": "vscode-icons",
     "diffEditor.ignoreTrimWhitespace": false,
     "javascript.updateImportsOnFileMove.enabled": "never",
-    "window.zoomLevel": 0,
     "vsicons.dontShowNewVersionMessage": true,
     "search.followSymlinks": false,
     "dart.checkForSdkUpdates": false,
-    "window.titleBarStyle": "custom",
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": true,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Dracula",
+    "window.titleBarStyle": "custom",
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.fontFamily": "'Source Code Pro', 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace, 'Droid Sans Fallback'",
+    "editor.tabSize": 2,
+    "editor.fontLigatures": "all off"
 }
